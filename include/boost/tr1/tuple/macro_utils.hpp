@@ -48,6 +48,10 @@
 //      ...
 //      typename boost::call_traits<TN>::param_type _N
 
+
+// FIXME: Using call traits is different than what is specified in
+// the TR. Probably does the same thing, but must be confirmed anyway.
+
 #define BOOST_TR1_TUPLE_CALL_TRAITS_PARAM(z, n, data)                   \
     typename boost::call_traits<BOOST_PP_CAT(T, n)>             \
         ::param_type BOOST_PP_CAT(_, n)
