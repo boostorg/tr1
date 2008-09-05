@@ -65,19 +65,16 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::erfc)(ld), ld);
       verify_return_type((std::tr1::erfcf)(f), f);
       verify_return_type((std::tr1::erfcl)(ld), ld);
-#if 0
       verify_return_type((std::tr1::exp2)(d), d);
       verify_return_type((std::tr1::exp2)(f), f);
       verify_return_type((std::tr1::exp2)(ld), ld);
       verify_return_type((std::tr1::exp2f)(f), f);
       verify_return_type((std::tr1::exp2l)(ld), ld);
-#endif
       verify_return_type((std::tr1::expm1)(d), d);
       verify_return_type((std::tr1::expm1)(f), f);
       verify_return_type((std::tr1::expm1)(ld), ld);
       verify_return_type((std::tr1::expm1f)(f), f);
       verify_return_type((std::tr1::expm1l)(ld), ld);
-#if 0
       verify_return_type((std::tr1::fdim)(d, d), d);
       verify_return_type((std::tr1::fdim)(f, f), f);
       verify_return_type((std::tr1::fdim)(ld, ld), ld);
@@ -88,7 +85,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::fma)(ld, ld, ld), ld);
       verify_return_type((std::tr1::fmaf)(f, f, f), f);
       verify_return_type((std::tr1::fmal)(ld, ld, ld), ld);
-#endif
       verify_return_type((std::tr1::fmax)(d, d), d);
       verify_return_type((std::tr1::fmax)(f, f), f);
       verify_return_type((std::tr1::fmax)(ld, ld), ld);
@@ -104,25 +100,21 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::hypot)(ld, ld), ld);
       verify_return_type((std::tr1::hypotf)(f, f), f);
       verify_return_type((std::tr1::hypotl)(ld, ld), ld);
-#if 0
       verify_return_type((std::tr1::ilogb)(d), d);
       verify_return_type((std::tr1::ilogb)(f), f);
       verify_return_type((std::tr1::ilogb)(ld), ld);
       verify_return_type((std::tr1::ilogbf)(f), f);
       verify_return_type((std::tr1::ilogbl)(ld), ld);
-#endif
       verify_return_type((std::tr1::lgamma)(d), d);
       verify_return_type((std::tr1::lgamma)(f), f);
       verify_return_type((std::tr1::lgamma)(ld), ld);
       verify_return_type((std::tr1::lgammaf)(f), f);
       verify_return_type((std::tr1::lgammal)(ld), ld);
-#if 0
       verify_return_type((std::tr1::llrint)(d), d);
       verify_return_type((std::tr1::llrint)(f), f);
       verify_return_type((std::tr1::llrint)(ld), ld);
       verify_return_type((std::tr1::llrintf)(f), f);
       verify_return_type((std::tr1::llrintl)(ld), ld);
-#endif
 #ifdef BOOST_HAS_LONG_LONG
       verify_return_type((std::tr1::llround)(d), lli);
       verify_return_type((std::tr1::llround)(f), lli);
@@ -135,7 +127,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::log1p)(ld), ld);
       verify_return_type((std::tr1::log1pf)(f), f);
       verify_return_type((std::tr1::log1pl)(ld), ld);
-#if 0
       verify_return_type((std::tr1::log2)(d), d);
       verify_return_type((std::tr1::log2)(f), f);
       verify_return_type((std::tr1::log2)(ld), ld);
@@ -151,13 +142,11 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::lrint)(ld), ld);
       verify_return_type((std::tr1::lrintf)(f), f);
       verify_return_type((std::tr1::lrintl)(ld), ld);
-#endif
       verify_return_type((std::tr1::lround)(d), li);
       verify_return_type((std::tr1::lround)(f), li);
       verify_return_type((std::tr1::lround)(ld), li);
       verify_return_type((std::tr1::lroundf)(f), li);
       verify_return_type((std::tr1::lroundl)(ld), li);
-#if 0
       verify_return_type((std::tr1::nan)(nan_str), d);
       verify_return_type((std::tr1::nanf)(nan_str), f);
       verify_return_type((std::tr1::nanl)(nan_str), ld);
@@ -166,7 +155,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::nearbyint)(ld), ld);
       verify_return_type((std::tr1::nearbyintf)(f), f);
       verify_return_type((std::tr1::nearbyintl)(ld), ld);
-#endif
       verify_return_type((std::tr1::nextafter)(d, d), d);
       verify_return_type((std::tr1::nextafter)(f, f), f);
       verify_return_type((std::tr1::nextafter)(ld, ld), ld);
@@ -177,7 +165,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::nexttoward)(ld, ld), ld);
       verify_return_type((std::tr1::nexttowardf)(f, ld), f);
       verify_return_type((std::tr1::nexttowardl)(ld, ld), ld);
-#if 0
       verify_return_type((std::tr1::remainder)(d, d), d);
       verify_return_type((std::tr1::remainder)(f, f), f);
       verify_return_type((std::tr1::remainder)(ld, ld), ld);
@@ -193,13 +180,11 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::rint)(ld), ld);
       verify_return_type((std::tr1::rintf)(f), f);
       verify_return_type((std::tr1::rintl)(ld), ld);
-#endif
       verify_return_type((std::tr1::round)(d), d);
       verify_return_type((std::tr1::round)(f), f);
       verify_return_type((std::tr1::round)(ld), ld);
       verify_return_type((std::tr1::roundf)(f), f);
       verify_return_type((std::tr1::roundl)(ld), ld);
-#if 0
       verify_return_type((std::tr1::scalbln)(d, li), d);
       verify_return_type((std::tr1::scalbln)(f, li), f);
       verify_return_type((std::tr1::scalbln)(ld, li), ld);
@@ -210,7 +195,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::scalbn)(ld, i), ld);
       verify_return_type((std::tr1::scalbnf)(f, i), f);
       verify_return_type((std::tr1::scalbnl)(ld, i), ld);
-#endif
       verify_return_type((std::tr1::tgamma)(d), d);
       verify_return_type((std::tr1::tgamma)(f), f);
       verify_return_type((std::tr1::tgamma)(ld), ld);
@@ -239,7 +223,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::isnormal)(d), b);
       verify_return_type((std::tr1::isnormal)(f), b);
       verify_return_type((std::tr1::isnormal)(ld), b);
-#if 0
       verify_return_type((std::tr1::isgreater)(d, d), b);
       verify_return_type((std::tr1::isgreater)(f, f), b);
       verify_return_type((std::tr1::isgreater)(ld, ld), b);
@@ -258,7 +241,6 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::isunordered)(d, d), b);
       verify_return_type((std::tr1::isunordered)(f, f), b);
       verify_return_type((std::tr1::isunordered)(ld, ld), b);
-#endif
 
       // [5.2.1.1] associated Laguerre polynomials:
       verify_return_type((std::tr1::assoc_laguerre)(ui, ui, d), d);
@@ -296,14 +278,12 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::comp_ellint_3)(ld, ld), ld);
       verify_return_type((std::tr1::comp_ellint_3f)(f, f), f);
       verify_return_type((std::tr1::comp_ellint_3l)(ld, ld), ld);
-#if 0
       // [5.2.1.7] confluent hypergeometric functions:
       verify_return_type((std::tr1::conf_hyperg)(d, d, d), d);
       verify_return_type((std::tr1::conf_hyperg)(f, f, f), f);
       verify_return_type((std::tr1::conf_hyperg)(ld, ld, ld), ld);
       verify_return_type((std::tr1::conf_hypergf)(f, f, f), f);
       verify_return_type((std::tr1::conf_hypergl)(ld, ld, ld), ld);
-#endif
       // [5.2.1.8] regular modified cylindrical Bessel functions:
       verify_return_type((std::tr1::cyl_bessel_i)(d, d), d);
       verify_return_type((std::tr1::cyl_bessel_i)(f, f), f);
@@ -360,13 +340,11 @@ int main(int argc, const char* [])
       verify_return_type((std::tr1::hermitef)(ui, f), f);
       verify_return_type((std::tr1::hermitel)(ui, ld), ld);
       // [5.2.1.17] hypergeometric functions:
-#if 0
       verify_return_type((std::tr1::hyperg)(d, d, d, d), d);
       verify_return_type((std::tr1::hyperg)(f, f, f, f), f);
       verify_return_type((std::tr1::hyperg)(ld, ld, ld, ld), ld);
       verify_return_type((std::tr1::hypergf)(f, f, f, f), f);
       verify_return_type((std::tr1::hypergl)(ld, ld, ld, ld), ld);
-#endif
       // [5.2.1.18] Laguerre polynomials:
       verify_return_type((std::tr1::laguerre)(ui, d), d);
       verify_return_type((std::tr1::laguerre)(ui, f), f);
@@ -407,7 +385,4 @@ int main(int argc, const char* [])
    }
    return 0;
 }
-
-
-
 
