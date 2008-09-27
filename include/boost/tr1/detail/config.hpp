@@ -8,7 +8,7 @@
 
 #include <cstddef>
 
-#ifdef __GNUC__
+#if defined(__GNUC__) || (!defined(_AIX) && defined(__IBMCPP__)  && (__IBMCPP__ >= 800)) 
 #if !defined(BOOST_HAS_INCLUDE_NEXT)
 #  define BOOST_HAS_INCLUDE_NEXT
 #endif
@@ -49,6 +49,16 @@
 #  define BOOST_TR1_USE_OLD_TUPLE
 #endif
 
+#ifdef __IBMCPP_TR1__
+   // turn on support for everything:
+#  define BOOST_HAS_TR1
+#endif
+
+#ifdef __GXX_EXPERIMENTAL_CXX0X__
+#  define BOOST_HAS_TR1_COMPLEX_OVERLOADS
+#  define BOOST_HAS_TR1_COMPLEX_INVERSE_TRIG
+#endif
+
 #ifdef BOOST_HAS_TR1
    // turn on support for everything:
 #  define BOOST_HAS_TR1_ARRAY
@@ -68,6 +78,7 @@
 #  define BOOST_HAS_TR1_UTILITY
 #  define BOOST_HAS_TR1_UNORDERED_MAP
 #  define BOOST_HAS_TR1_UNORDERED_SET
+#  define BOOST_HAS_TR1_CMATH
 
 #endif
 
@@ -85,8 +96,10 @@
 #ifdef BOOST_HAS_GCC_TR1
    // turn on support for everything in gcc 4.0.x:
 #  define BOOST_HAS_TR1_ARRAY
+#if (__GNUC__ * 100 + __GNUC_MINOR__) >= 403
 //#  define BOOST_HAS_TR1_COMPLEX_OVERLOADS
-//#  define BOOST_HAS_TR1_COMPLEX_INVERSE_TRIG
+#  define BOOST_HAS_TR1_COMPLEX_INVERSE_TRIG
+#endif
 #  define BOOST_HAS_TR1_REFERENCE_WRAPPER
 #  define BOOST_HAS_TR1_RESULT_OF
 #  define BOOST_HAS_TR1_MEM_FN
@@ -94,8 +107,13 @@
 #  define BOOST_HAS_TR1_FUNCTION
 #  define BOOST_HAS_TR1_HASH
 #  define BOOST_HAS_TR1_SHARED_PTR
-//#  define BOOST_HAS_TR1_RANDOM
+#if (__GNUC__ * 100 + __GNUC_MINOR__) >= 403
+#  define BOOST_HAS_TR1_RANDOM
 //#  define BOOST_HAS_TR1_REGEX
+#ifdef _GLIBCXX_USE_C99_MATH_TR1
+#  define BOOST_HAS_TR1_CMATH
+#endif
+#endif
 #  define BOOST_HAS_TR1_TUPLE
 #  define BOOST_HAS_TR1_TYPE_TRAITS
 #  define BOOST_HAS_TR1_UTILITY
@@ -104,8 +122,42 @@
 
 #endif
 
+#if defined(_MSC_VER) && (_MSC_VER >= 1500) \
+   && defined(_MSC_FULL_VER) && \
+   !defined(__SGI_STL_PORT) && \
+   !defined(_STLPORT_VERSION) && \
+   !defined(_RWSTD_VER_STR) && \
+   !defined(_RWSTD_VER)
+//
+// MSVC-9.0 defines a not-quite TR1 conforming hash
+// function object in <functional>, so we must define
+// this here, in addition the feature pack for VC9
+// provides a more or less full TR1 implementation:
+//
+#if defined(_HAS_TR1) && (_HAS_TR1 + 0)
+#  define BOOST_HAS_TR1_ARRAY
+#  define BOOST_HAS_TR1_REFERENCE_WRAPPER
+#  define BOOST_HAS_TR1_RESULT_OF
+#  define BOOST_HAS_TR1_MEM_FN
+#  define BOOST_HAS_TR1_BIND
+#  define BOOST_HAS_TR1_FUNCTION
+#  define BOOST_HAS_TR1_HASH
+#  define BOOST_HAS_TR1_SHARED_PTR
+#  define BOOST_HAS_TR1_RANDOM
+#  define BOOST_HAS_TR1_REGEX
+#  define BOOST_HAS_TR1_TUPLE
+#  define BOOST_HAS_TR1_TYPE_TRAITS
+#  define BOOST_HAS_TR1_UTILITY
+#  define BOOST_HAS_TR1_UNORDERED_MAP
+#  define BOOST_HAS_TR1_UNORDERED_SET
+#else
+#  define BOOST_HAS_TR1_HASH
+#endif
+#endif
+
 #include <boost/config.hpp>
 
 #endif
+
 
 
