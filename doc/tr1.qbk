@@ -12,6 +12,10 @@
 ]
 
 [section:intro Introduction]
+
+[important This library is deprecated in favor of native C++11 standard library features, as a result 
+it receives little or no maintenance.]
+
 The TR1 library provides an implementation of the C++ Technical Report on Standard Library Extensions.
 This library does not itself implement the TR1 components, rather it's a thin wrapper that will 
 include your standard library's TR1 implementation (if it has one), otherwise it will include the Boost
