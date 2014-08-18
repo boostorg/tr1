@@ -1,0 +1,18 @@
+{
+    "key": "tr1",
+    "status": "deprecated",
+    "name": "TR1",
+    "authors": [
+        "John Maddock"
+    ],
+    "description": "The TR1 library provides an implementation of the C++ Technical Report on Standard Library Extensions. This library does not itself implement the TR1 components, rather it's a thin wrapper that will include your standard library's TR1 implementation (if it has one), otherwise it will include the Boost Library equivalents, and import them into namespace std::tr1.",
+    "std": [
+        "tr1"
+    ],
+    "category": [
+        "Miscellaneous"
+    ],
+    "maintainers": [
+        "John Maddock <john -at- johnmaddock.co.uk>"
+    ]
+}
