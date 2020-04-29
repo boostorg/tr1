@@ -161,7 +161,7 @@ support TR1 (note that few are at present) then this will be detected and Boost.
 will use your standard library versions of these components rather than the 
 Boost ones.
 
-If you would prefer to use the Boost versions of the TR1 conponents rather than
+If you would prefer to use the Boost versions of the TR1 components rather than
 your standard library, then either: include the Boost headers directly
 
    #include <boost/regex.hpp>
